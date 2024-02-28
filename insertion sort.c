@@ -1,0 +1,39 @@
+#include <math.h>
+#include <stdio.h>
+
+// Insertion Sort Function
+void insertionSort(int array[], int n)
+{
+    int i, element, j;
+    for (i = 1; i < n; i++)
+    { element = array[i];
+    j = i - 1;
+    while (j >= 0 && array[j] > element)
+        {
+            array[j + 1] = array[j];
+            j = j - 1;
+        }
+        array[j + 1] = element;
+    }
+}
+
+// Function to print the elements of an array
+void printArray(int array[], int n)
+{
+    int i;
+    for (i = 0; i < n; i++)
+        printf("%d ", array[i]);
+    printf("n");
+}
+int main()
+{
+    int array[100],n,i,j;
+    printf("Enter number of elements\n");
+    scanf("%d", &n);
+    printf("Enter %d Numbers:\n", n);
+    for(i = 0; i < n; i++)
+    scanf("%d", &array[i]);
+    insertionSort(array, n);
+    printArray(array, n);
+
+}
